@@ -41,3 +41,6 @@ const mergeSort = (arr) => {
 const arr = [1, 2, 8, 3, 7, 89, 8, 5, 3, 87, 676, 0, 3];
 const res = mergeSort(arr);
 console.log(res);
+
+// TIME COMPLEXITY = O(n log n)
+// SPACE COMPLEXITY = O(n)

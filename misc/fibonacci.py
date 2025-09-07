@@ -11,9 +11,13 @@
     #USING B VALUE WHICH IS 1 ALWAYS SO A INCREASING BY 1 SO IT'S NOT FIBONACCI SERIES
 
 def fibonacci(value):
+    arr = []
     a,b = 0,1
     for _ in range(value):
         print(a)
         a, b = b, a+b
-
-fibonacci(11)
+        arr.append(a)
+    
+    return arr
+res = fibonacci(11)
+print(res)

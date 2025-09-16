@@ -1,0 +1,18 @@
+function grawRectangle() {
+  let n = 5;
+  for (let i = 1; i <= n; i++) {
+    let row = "";
+    for (let j = 1; j <= n; j++) {
+      if (i == 1 || i == n || j == 1 || j == n) {
+        // console.log("*");
+        row += "*";
+      } else {
+        // console.log(" ");
+        row += " ";
+      }
+    }
+    console.log(row);
+  }
+}
+
+grawRectangle();

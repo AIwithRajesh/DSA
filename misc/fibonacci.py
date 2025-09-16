@@ -13,6 +13,7 @@
 def fibonacci(value):
     arr = []
     a,b = 0,1
+    arr.append(0)
     for _ in range(value):
         print(a)
         a, b = b, a+b

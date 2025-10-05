@@ -1,26 +1,15 @@
 const findMissing = (nums) => {
-  let XOR1 = 0;
-  let XOR2 = 0;
+  let n = nums.length;
+  let xor1 = 0; // XOR of 0..n
+  let xor2 = 0; // XOR of array elements
 
-  const min = Math.min(...nums);
-  const max = Math.max(...nums);
+  for (let i = 0; i <= n; i++) xor1 ^= i;
+  for (let num of nums) xor2 ^= num;
 
-  for (let i = min; i <= max; i++) {
-    console.log("index", i);
-    XOR1 ^= i;
-  }
-
-  for (let num of nums) {
-    console.log("num", num);
-    XOR2 ^= num;
-  }
-
-  console.log(XOR1, XOR2);
-
-  return XOR1 ^ XOR2;
+  return xor1 ^ xor2;
 };
 
-const nums = [10, 12, 13, 14, 15];
+const nums = [1];
 const res = findMissing(nums);
 
 console.log(res);

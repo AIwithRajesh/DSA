@@ -23,4 +23,18 @@ const m = 1,
   n = 1;
 const original = [3];
 const array2D = construct2DArray(original, m, n);
-console.log(array2D);
+// console.log(array2D);
+
+console.log("hello1");
+
+async function asyncWait() {
+  setTimeout(() => {
+    console.log("settime");
+  }, 5000);
+  console.log("hello2");
+  const data = await fetch("https://jsonplaceholder.typicode.com/todos/1/");
+  console.log(data);
+}
+asyncWait();
+
+console.log("hello3");

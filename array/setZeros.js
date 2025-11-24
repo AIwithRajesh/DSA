@@ -1,19 +1,30 @@
 const setZeros = (matrix) => {
-  // if zero find in a array set all values 0 in that array
-  // take index of zero and then update all arrays index value to zero
-  let zeroIndex = 0;
+  const colsToZero = new Set();
+  let zeroThArray = null;
 
   for (let i = 0; i < matrix.length; i++) {
     const currentArr = matrix[i];
+
     for (let j = 0; j < currentArr.length; j++) {
       if (currentArr[j] === 0) {
-        zeroIndex = j;
-        matrix[i].fill(0);
-        break;
+        colsToZero.add(j);
+        zeroThArray = i;
       }
     }
+
+    if (zeroThArray !== null) {
+      matrix[zeroThArray].fill(0);
+    }
   }
-  console.log(matrix);
+
+  for (const col of colsToZero) {
+    console.log("col", col);
+    for (let k = 0; k < matrix.length; k++) {
+      matrix[k][col] = 0;
+    }
+  }
+
+  console.log(colsToZero, zeroThArray);
 };
 
 const matrix = [
@@ -21,4 +32,7 @@ const matrix = [
   [1, 0, 1],
   [1, 1, 1],
 ];
+
 const res = setZeros(matrix);
+
+console.log(matrix);

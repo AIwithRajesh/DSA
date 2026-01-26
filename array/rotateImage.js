@@ -3,22 +3,24 @@ var rotate = function (matrix) {
   let index = matrix.length - 1;
 
   for (let i = 0; i < matrix.length; i++) {
-    let row = matrix[i];
+    // Row of matrix
+    let row = matrix[i]; //matrix[0] = [5, 1, 9, 11] so on
+
     for (let j = 0; j < row.length; j++) {
       emptyMatrix[j][index] = row[j];
-      index--;
-      break;
     }
+    index--;
   }
 
-  console.log(emptyMatrix);
+  return emptyMatrix;
 };
 
 const matrix = [
-  [5, 1, 9, 11],
-  [2, 4, 8, 10],
-  [13, 3, 6, 7],
-  [15, 14, 12, 16],
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9],
 ];
 
 const res = rotate(matrix);
+
+console.log(res);
